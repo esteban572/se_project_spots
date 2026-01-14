@@ -1,0 +1,42 @@
+.header {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+}
+
+.header__content {
+  max-width: 1279px;
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__logo {
+  width: 94px;
+  height: 26px;
+  display: block;
+}
+
+
+@media (max-width: 1319px) {
+  .header__content {
+
+    max-width: 846px;
+  }
+}
+
+@media (max-width: 886px) {
+  .header__content {
+    max-width: 413px;
+  }
+}
+
+@media (max-width: 627px) {
+  .header__content {
+    width: calc(100% - 32px);
+  }
+}
