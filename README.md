@@ -22,5 +22,5 @@ Spots is an interactive social media web application designed for sharing and vi
 
 
 ## Links
-* **Deployed Project:** https://github.com/esteban572/se_project_spots
+* **Deployed Project:** https://esteban572.github.io/se_project_spots/
 * **Project Pitch Video:**  https://www.loom.com/share/c1ac598801f14c3384f7037549952350
