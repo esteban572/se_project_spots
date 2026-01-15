@@ -1,11 +1,10 @@
 .profile {
-  max-width: 1319px;
+  max-width: 1280px;
   width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 34px 20px 20px;
+  padding: 34px 0 20px;
   border-bottom: 1px solid #21212166;
   box-sizing: border-box;
 }
@@ -28,6 +27,7 @@
 }
 
 .profile__name {
+  max-width: 420px;
   margin: 0;
   font-size: 32px;
   font-weight: 500;
@@ -41,6 +41,7 @@
 }
 
 .profile__description {
+  max-width: 420px;
   margin: 0;
   font-size: 16px;
   font-weight: 500;
@@ -54,6 +55,7 @@
 }
 
 .profile__edit-button {
+  margin-top: auto;
   width: fit-content;
   padding: 0;
   font-size: 16px;
