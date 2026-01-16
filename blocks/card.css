@@ -56,10 +56,6 @@
   opacity: 1;
 }
 
-/* .card__like-button_active {
-  opacity: 1;
-} */
-
 @media (max-width: 627px) {
   .card {
     width: 288px;
