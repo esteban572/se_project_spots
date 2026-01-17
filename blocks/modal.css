@@ -89,7 +89,7 @@
   border-bottom: 1px solid #21212166;
   box-sizing: border-box;
   outline: none;
-  transition: border-color 0.3s ease; */ */ */
+  transition: border-color 0.3s ease; */ 
 }
 
 .modal__input::placeholder {
