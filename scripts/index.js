@@ -14,31 +14,45 @@ const newPostModal = document.querySelector("#new-post-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 
-// Form elements
+// Edit Profile form elements
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 const profileNameInput = editProfileModal.querySelector("#profile-name-input");
 const profileDescriptionInput = editProfileModal.querySelector("#profile-description-input");
+
+// New Post form elements
+const newPostForm = newPostModal.querySelector(".modal__form");
+const cardImageInput = newPostModal.querySelector("#card-image-input");
+const cardCaptionInput = newPostModal.querySelector("#card-caption-input");
+
+// Modal helper functions
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+}
 
 // Open Edit Profile modal and pre-fill form with current values
 editProfileButton.addEventListener("click", function () {
   profileNameInput.value = profileName.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
-  editProfileModal.classList.add("modal_is-opened");
+  openModal(editProfileModal);
 });
 
 // Open New Post modal
 newPostButton.addEventListener("click", function () {
-  newPostModal.classList.add("modal_is-opened");
+  openModal(newPostModal);
 });
 
 // Close Edit Profile modal
 editProfileCloseBtn.addEventListener("click", function () {
-  editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 });
 
 // Close New Post modal
 newPostCloseBtn.addEventListener("click", function () {
-  newPostModal.classList.remove("modal_is-opened");
+  closeModal(newPostModal);
 });
 
 // Handle Edit Profile form submission
@@ -46,5 +60,13 @@ editProfileForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
   profileName.textContent = profileNameInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
-  editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
+});
+
+// Handle New Post form submission
+newPostForm.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+  console.log("Image Link:", cardImageInput.value);
+  console.log("Caption:", cardCaptionInput.value);
+  closeModal(newPostModal);
 });
