@@ -66,7 +66,13 @@ editProfileForm.addEventListener("submit", function (evt) {
 // Handle New Post form submission
 newPostForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
+
+  // Logic to handle the new card creation would go here
   console.log("Image Link:", cardImageInput.value);
   console.log("Caption:", cardCaptionInput.value);
+
+  // Clear the form inputs
+  evt.target.reset();
+
   closeModal(newPostModal);
 });

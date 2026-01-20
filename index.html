@@ -170,11 +170,11 @@
           <form class="modal__form">
             <label for="profile-name-input" class="modal__label">
               Name
-              <input id="profile-name-input" type="text" class="modal__input" placeholder="Name" value="Bessie Coleman">
+             <input id="profile-name-input" type="text" class="modal__input" placeholder="Name" required>
             </label>
             <label for="profile-description-input" class="modal__label">
               Description
-              <input id="profile-description-input" type="text" class="modal__input" placeholder="Description" value="Civil Aviator">
+              <input id="profile-description-input" type="text" class="modal__input" placeholder="Description" required>
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
@@ -182,7 +182,9 @@
       </div>
       <div id="new-post-modal" class="modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn">X</button>
+          <button type="button" class="modal__close-btn">
+  <img src="./images/close.svg" alt="Close modal" class="modal__close-icon" />
+</button>
           <h2 class="modal__title">New Post</h2>
           <form class="modal__form">
             <label for="card-image-input" class="modal__label">Image Link

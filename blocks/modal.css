@@ -159,7 +159,7 @@
 
 @media (max-width: 627px) {
   .modal__container {
-    max-width: calc(100% - 32px);
+    max-width: calc(100% - 38px);
     padding: 24px 16px;
     border-radius: 12px;
   }
