@@ -100,6 +100,7 @@ function createCard(item) {
 }
 
 initialCards.forEach(function (card) {
+  console.log(card.name);
   const cardElement = createCard(card);
   cardsContainer.appendChild(cardElement);
 });
