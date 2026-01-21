@@ -51,6 +51,10 @@ const newPostForm = newPostModal.querySelector(".modal__form");
 const cardImageInput = newPostModal.querySelector("#card-image-input");
 const cardCaptionInput = newPostModal.querySelector("#card-caption-input");
 
+// Cards related elements
+const cardsContainer = document.querySelector(".cards__list");
+const cardTemplate = document.querySelector("#card-template").content.querySelector(".card");
+
 // Modal helper functions
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
@@ -81,6 +85,19 @@ editProfileCloseBtn.addEventListener("click", function () {
 newPostCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
 });
+
+// Card functions
+function createCard(item) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardImage = cardElement.querySelector(".card__image");
+  const cardTitle = cardElement.querySelector(".card__title");
+
+  cardImage.src = item.link;
+  cardImage.alt = item.name;
+  cardTitle.textContent = item.name;
+
+  return cardElement;
+}
 
 initialCards.forEach(function (card) {
   const cardElement = createCard(card);
