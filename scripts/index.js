@@ -1,3 +1,30 @@
+const initialCards = [
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-plus/cards/lake.jpg"
+  },
+  {
+    name: "Parque Nacional Torres del Paine",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-plus/cards/yosemite.jpg"
+  },
+  {
+    name: "Camino de los Dioses",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-plus/cards/chicago.jpg"
+  },
+  {
+    name: "Valle de la Luna",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-plus/cards/baikal.jpg"
+  },
+  {
+    name: "Glaciar Perito Moreno",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-plus/cards/kamchatka.jpg"
+  },
+  {
+    name: "Parque Nacional Los Glaciares",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-plus/cards/karjala.jpg"
+  }
+];
+
 // Profile elements
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
@@ -53,6 +80,11 @@ editProfileCloseBtn.addEventListener("click", function () {
 // Close New Post modal
 newPostCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
+});
+
+initialCards.forEach(function (card) {
+  const cardElement = createCard(card);
+  cardsContainer.appendChild(cardElement);
 });
 
 // Handle Edit Profile form submission
