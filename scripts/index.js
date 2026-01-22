@@ -37,9 +37,8 @@ const newPostButton = document.querySelector(".profile__add-button");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const newPostModal = document.querySelector("#new-post-modal");
 
-// Modal close buttons
-const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
-const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
+// Modal elements
+const modals = document.querySelectorAll(".modal");
 
 // Edit Profile form elements
 const editProfileForm = editProfileModal.querySelector(".modal__form");
@@ -76,14 +75,12 @@ newPostButton.addEventListener("click", function () {
   openModal(newPostModal);
 });
 
-// Close Edit Profile modal
-editProfileCloseBtn.addEventListener("click", function () {
-  closeModal(editProfileModal);
-});
-
-// Close New Post modal
-newPostCloseBtn.addEventListener("click", function () {
-  closeModal(newPostModal);
+// Set up close button listeners
+modals.forEach(function (modal) {
+  const closeButton = modal.querySelector(".modal__close-btn");
+  closeButton.addEventListener("click", function () {
+    closeModal(modal);
+  });
 });
 
 // Card functions
@@ -117,9 +114,12 @@ editProfileForm.addEventListener("submit", function (evt) {
 newPostForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
 
-  // Logic to handle the new card creation would go here
-  console.log("Image Link:", cardImageInput.value);
-  console.log("Caption:", cardCaptionInput.value);
+  const newCardData = {
+    name: cardCaptionInput.value,
+    link: cardImageInput.value,
+  };
+
+  console.log("New Post Data:", newCardData);
 
   // Clear the form inputs
   evt.target.reset();
