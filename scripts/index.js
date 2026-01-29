@@ -22,6 +22,10 @@ const initialCards = [
   {
     name: "Mountain house",
     link: "./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
+  },
+  {
+    name: "Landscape view",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg"
   }
 ];
 
@@ -36,9 +40,12 @@ const newPostButton = document.querySelector(".profile__add-button");
 // Modals
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const newPostModal = document.querySelector("#new-post-modal");
+const previewImageModal = document.querySelector("#preview-image-modal");
 
 // Modal elements
 const modals = document.querySelectorAll(".modal");
+const previewImage = previewImageModal.querySelector(".modal__image");
+const previewCaption = previewImageModal.querySelector(".modal__caption");
 
 // Edit Profile form elements
 const editProfileForm = editProfileModal.querySelector(".modal__form");
@@ -84,21 +91,41 @@ modals.forEach(function (modal) {
 });
 
 // Card functions
-function createCard(item) {
+function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");
   const cardTitle = cardElement.querySelector(".card__title");
+  const likeButton = cardElement.querySelector(".card__like-button");
+  const deleteButton = cardElement.querySelector(".card__delete-btn");
 
-  cardImage.src = item.link;
-  cardImage.alt = item.name;
-  cardTitle.textContent = item.name;
+  cardImage.src = data.link;
+  cardImage.alt = data.name;
+  cardTitle.textContent = data.name;
+
+  // Like button event listener
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("card__like-button_active");
+  });
+
+  // Delete button event listener
+  deleteButton.addEventListener("click", () => {
+    cardElement.remove();
+  });
+
+  // Preview Image event listener
+  cardImage.addEventListener("click", () => {
+    previewImage.src = data.link;
+    previewImage.alt = data.name;
+    previewCaption.textContent = data.name;
+    openModal(previewImageModal);
+  });
 
   return cardElement;
 }
 
+// Render initial cards
 initialCards.forEach(function (card) {
-  console.log(card.name);
-  const cardElement = createCard(card);
+  const cardElement = getCardElement(card);
   cardsContainer.appendChild(cardElement);
 });
 
@@ -119,7 +146,8 @@ newPostForm.addEventListener("submit", function (evt) {
     link: cardImageInput.value,
   };
 
-  console.log("New Post Data:", newCardData);
+  const cardElement = getCardElement(newCardData);
+  cardsContainer.prepend(cardElement);
 
   // Clear the form inputs
   evt.target.reset();

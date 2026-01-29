@@ -62,8 +62,8 @@
       <div id="edit-profile-modal" class="modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn">
-  <img src="./images/close.svg" alt="Close modal" class="modal__close-icon" />
-</button>
+            <img src="./images/close.svg" alt="Close modal" class="modal__close-icon" />
+          </button>
           <h2 class="modal__title">Edit profile</h2>
           <form class="modal__form">
             <label for="profile-name-input" class="modal__label">
@@ -81,8 +81,8 @@
       <div id="new-post-modal" class="modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn">
-  <img src="./images/close.svg" alt="Close modal" class="modal__close-icon" />
-</button>
+            <img src="./images/close.svg" alt="Close modal" class="modal__close-icon" />
+          </button>
           <h2 class="modal__title">New Post</h2>
           <form class="modal__form">
             <label for="card-image-input" class="modal__label">Image Link
@@ -97,9 +97,19 @@
           </form>
         </div>
       </div>
+      <div id="preview-image-modal" class="modal">
+        <div class="modal__container modal__container_type_preview">
+          <button type="button" class="modal__close-btn">
+            <img src="./images/close.svg" alt="Close modal" class="modal__close-icon" />
+          </button>
+          <img src="" alt="" class="modal__image" />
+          <p class="modal__caption"></p>
+        </div>
+      </div>
     </div>
     <template id="card-template">
       <li class="card">
+        <button type="button" class="card__delete-btn" aria-label="Delete"></button>
         <article class="card__content">
           <img src="" alt="" class="card__image" />
           <div class="card__info">
