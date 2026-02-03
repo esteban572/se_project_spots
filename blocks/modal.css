@@ -223,4 +223,9 @@
     padding: 16px;
     font-size: 14px;
   }
+
+  .modal__container.modal__container_type_preview .modal__close-btn {
+    top: -30px;
+    right: 0;
+  }
 }

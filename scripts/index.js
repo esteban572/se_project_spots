@@ -141,6 +141,11 @@ editProfileForm.addEventListener("submit", function (evt) {
 newPostForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
 
+  if (!newPostForm.checkValidity()) {
+    newPostForm.reportValidity();
+    return;
+  }
+
   const newCardData = {
     name: cardCaptionInput.value,
     link: cardImageInput.value,
