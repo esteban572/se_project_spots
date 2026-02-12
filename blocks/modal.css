@@ -50,7 +50,6 @@
   background-image: url("../images/Property 1=Variant3.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
 }
 
 .modal__container.modal__container_type_preview .modal__close-btn:hover {
@@ -92,7 +91,6 @@
   background-image: url("../images/default.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
   border: none;
   cursor: pointer;
   transition: opacity 0.3s ease;
