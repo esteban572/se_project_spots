@@ -39,7 +39,7 @@
           <div class="profile__info">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
-            <button class="profile__edit-button">
+            <button type="button" class="profile__edit-button">
               <img
                 src="./images/pencil.svg"
                 alt=""
@@ -160,27 +160,27 @@
         </section>
       </main>
       <footer class="footer">
+        <div class="footer__content">
           <p class="footer__copyright">© 2023 Spots</p>
-        </div>
       </footer>
-      <div class="modal">
+      <div id="edit-profile-modal" class="modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn">X</button>
-          <h2 class="modal__title">Edit Profile</h2>
+          <button type="button" class="modal__close-btn">×</button>
+          <h2 class="modal__title">Edit profile</h2>
           <form class="modal__form">
             <label for="profile-name-input" class="modal__label">
-              <input id="profile-name-input" type="text" class="modal__input" placeholder="Type your name">
+              Name
+              <input id="profile-name-input" type="text" class="modal__input" placeholder="Name" value="Bessie Coleman">
             </label>
-
             <label for="profile-description-input" class="modal__label">
-              <input id="profile-description-input" type="text" class="modal__input" placeholder="Describe yourself">
-
+              Description
+              <input id="profile-description-input" type="text" class="modal__input" placeholder="Description" value="Civil Aviator">
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>
       </div>
-       <div class="modal">
+      <div id="new-post-modal" class="modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn">X</button>
           <h2 class="modal__title">New Post</h2>
@@ -189,8 +189,8 @@
               <input id="card-image-input" type="url" class="modal__input" placeholder="Place a link to the picture">
             </label>
 
-            <label for="profile-description-input" class="modal__label">Description
-              <input id="profile-description-input" type="text" class="modal__input" placeholder="Describe yourself">
+            <label for="card-caption-input" class="modal__label">Caption 
+              <input id="card-caption-input" type="text" class="modal__input" placeholder="Type your caption">
 
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
@@ -198,5 +198,6 @@
         </div>
       </div>
     </div>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
